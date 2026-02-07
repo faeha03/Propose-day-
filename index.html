@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Little Princess 💖</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+  height:100vh;
+  overflow:hidden;
+}
+
+.slide{
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:25px;
+  opacity:0;
+  transform:scale(0.95);
+  transition:all 0.7s ease;
+}
+
+.slide.active{
+  opacity:1;
+  transform:scale(1);
+}
+
+h1{
+  font-size:2.2rem;
+  color:#fff;
+  margin-bottom:20px;
+}
+
+p{
+  color:#fff;
+  font-size:1.1rem;
+  line-height:1.6;
+  max-width:500px;
+}
+
+button{
+  margin-top:30px;
+  padding:14px 26px;
+  border:none;
+  border-radius:30px;
+  background:#fff;
+  color:#ff5f7e;
+  font-size:1rem;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.08);
+  background:#ffe6ec;
+}
+
+.heart{
+  font-size:3rem;
+  animation:pulse 1.5s infinite;
+  margin-bottom:20px;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.2);}
+  100%{transform:scale(1);}
+}
+
+.small-btn{
+  background:transparent;
+  color:#fff;
+  border:2px solid #fff;
+}
+
+.small-btn:hover{
+  background:#fff;
+  color:#ff5f7e;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="slide active">
+  <div class="heart">💖</div>
+  <h1>Hey My Little Princess</h1>
+  <p>
+    Today is Purpose Day…  
+    and somehow every road, every thought, every heartbeat  
+    keeps leading me back to **you**.
+  </p>
+  <button onclick="nextSlide()">Tap gently 🫶</button>
+</div>
+
+<div class="slide">
+  <h1>You Know What My Purpose Is?</h1>
+  <p>
+    It’s loving you in ways that feel safe, warm, and real.  
+    It’s choosing you—not loudly, not dramatically—  
+    but **every single day**.
+  </p>
+  <button onclick="nextSlide()">Tell me more 🥺</button>
+</div>
+
+<div class="slide">
+  <h1>I Love You…</h1>
+  <p>
+    I love you when you smile.  
+    I love you when you’re quiet.  
+    I love you when you don’t even realize  
+    how precious you are to me.
+  </p>
+  <button onclick="nextSlide()">Again… say it again 💗</button>
+</div>
+
+<div class="slide">
+  <h1>Pressing This Button Means…</h1>
+  <p>
+    You’re choosing warmth over fear.  
+    You’re choosing comfort over doubt.  
+    You’re choosing *us*—slow, steady, and honest.
+  </p>
+  <button onclick="nextSlide()" class="small-btn">I choose you 🌷</button>
+</div>
+
+<div class="slide">
+  <h1>Here’s My Question…</h1>
+  <p>
+    Not rushed.  
+    Not forced.  
+    Just from my heart to yours…
+  </p>
+  <button onclick="nextSlide()">Okay… ask me 💌</button>
+</div>
+
+<div class="slide">
+  <div class="heart">❤️</div>
+  <h1>Will You Be My Valentine?</h1>
+  <p>
+    Not just for a day.  
+    But for every silly moment, every deep conversation,  
+    and every soft “are you okay?” that follows.
+  </p>
+  <button onclick="nextSlide()">Yes… I’m listening 💞</button>
+</div>
+
+<div class="slide">
+  <h1>Whatever Your Answer Is…</h1>
+  <p>
+    I’m grateful you exist.  
+    I’m grateful I get to feel this.  
+    And I promise—this question came with respect,  
+    affection, and a whole lot of love.
+  </p>
+  <button onclick="restart()">Read again 🥹</button>
+</div>
+
+<script>
+let current = 0;
+const slides = document.querySelectorAll('.slide');
+
+function nextSlide(){
+  slides[current].classList.remove('active');
+  current++;
+  if(current >= slides.length) current = slides.length - 1;
+  slides[current].classList.add('active');
+}
+
+function restart(){
+  slides[current].classList.remove('active');
+  current = 0;
+  slides[current].classList.add('active');
+}
+</script>
+
+</body>
+</html>
